@@ -9,6 +9,7 @@ import { connectMongoDB } from './db/connectMongoDB.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import notesRouter from './routes/notesRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import { logger } from './middleware/logger.js';
 
 const PORT = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(express.json({ limit: '10mb' }));
 
 app.use(notesRouter);
+app.use(userRoutes);
 
 app.use(errors());
 app.use(notFoundHandler);
