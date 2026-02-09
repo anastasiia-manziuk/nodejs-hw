@@ -9,7 +9,7 @@ import path from 'path';
 import Handlebars from 'handlebars';
 
 import jwt from 'jsonwebtoken';
-import { sendEmail } from '../utils/sendEmail.js';
+import { sendEmail } from '../utils/sendMail.js';
 
 export const registerUser = async (req, res) => {
   const { email, password } = req.body;
